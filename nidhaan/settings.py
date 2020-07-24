@@ -36,7 +36,7 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'contact.apps.ContactConfig',
     'portfolio.apps.PortfolioConfig',
-    'cs.apps.CsConfig',
+    'contact_us.apps.ContactUsConfig',
 
     'django.contrib.admin',
     'django.contrib.auth',
