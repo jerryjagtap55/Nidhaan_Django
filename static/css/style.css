@@ -11060,12 +11060,8 @@ h5,
     letter-spacing: 2px;
 }
 
-.blog-entry .meta>div a {
-    color: #000000;
-}
-
 .blog-entry .meta>div a:hover {
-    color: #000000;
+    color: #ffffff;
 }
 
 .block-27 ul {

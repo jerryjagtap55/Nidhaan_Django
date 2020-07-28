@@ -19,117 +19,25 @@
         <div class="row">
             <div class="col-lg-8 ftco-animate">
                 <div class="row">
-                    <div class="col-md-6 ftco-animate">
-                        <div class="blog-entry">
-                            <a href="blog-single.html" class="block-20" style="background-image: url('images/image_1.jpg');">
-                            </a>
-                            <div class="text py-4">
-                                <div class="meta mb-3">
-                                    <div><a href="#">Sep. 20, 2018</a></div>
-                                    <div><a href="#">Admin</a></div>
-                                    <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                                </div>
-                                <div class="desc">
-                                    <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-                                </div>
+                    {% if project %} {% for project in project %}
+                    <div class="blog-entry">
+                        <a href="blog-single.html" class="block-20" style="background-image: url({{ project.project_main_photo.url }});">
+                        </a>
+                        <div class="text py-4">
+                            <div class="meta mb-3">
+                                <div><a href="#"> {{ project.project_date }} </a></div>
+                                <div><a href="#">{{ project.categorie }}</a></div>
+
+                            </div>
+                            <div class="desc">
+                                <h3 class="heading"><a href="#">{{ project.name }}</a></h3>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 ftco-animate">
-                        <div class="blog-entry" data-aos-delay="100">
-                            <a href="blog-single.html" class="block-20" style="background-image: url('images/image_2.jpg');">
-                            </a>
-                            <div class="text py-4">
-                                <div class="meta mb-3">
-                                    <div><a href="#">Sep. 20, 2018</a></div>
-                                    <div><a href="#">Admin</a></div>
-                                    <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                                </div>
-                                <div class="desc">
-                                    <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 ftco-animate">
-                        <div class="blog-entry" data-aos-delay="200">
-                            <a href="blog-single.html" class="block-20" style="background-image: url('images/image_3.jpg');">
-                            </a>
-                            <div class="text py-4">
-                                <div class="meta mb-3">
-                                    <div><a href="#">Sep. 20, 2018</a></div>
-                                    <div><a href="#">Admin</a></div>
-                                    <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                                </div>
-                                <div class="desc">
-                                    <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 ftco-animate">
-                        <div class="blog-entry">
-                            <a href="blog-single.html" class="block-20" style="background-image: url('images/image_4.jpg');">
-                            </a>
-                            <div class="text py-4">
-                                <div class="meta mb-3">
-                                    <div><a href="#">Sep. 20, 2018</a></div>
-                                    <div><a href="#">Admin</a></div>
-                                    <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                                </div>
-                                <div class="desc">
-                                    <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 ftco-animate">
-                        <div class="blog-entry" data-aos-delay="100">
-                            <a href="blog-single.html" class="block-20" style="background-image: url('images/image_5.jpg');">
-                            </a>
-                            <div class="text py-4">
-                                <div class="meta mb-3">
-                                    <div><a href="#">Sep. 20, 2018</a></div>
-                                    <div><a href="#">Admin</a></div>
-                                    <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                                </div>
-                                <div class="desc">
-                                    <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 ftco-animate">
-                        <div class="blog-entry" data-aos-delay="200">
-                            <a href="blog-single.html" class="block-20" style="background-image: url('images/image_6.jpg');">
-                            </a>
-                            <div class="text py-4">
-                                <div class="meta mb-3">
-                                    <div><a href="#">Sep. 20, 2018</a></div>
-                                    <div><a href="#">Admin</a></div>
-                                    <div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
-                                </div>
-                                <div class="desc">
-                                    <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row mt-5">
-                    <div class="col text-center">
-                        <div class="block-27">
-                            <ul>
-                                <li><a href="#">&lt;</a></li>
-                                <li class="active"><span>1</span></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                                <li><a href="#">4</a></li>
-                                <li><a href="#">5</a></li>
-                                <li><a href="#">&gt;</a></li>
-                            </ul>
-                        </div>
-                    </div>
+                    {% endfor %} {% else %}
+                    <h3>Nothing to Display</h3>
+                    {% endif %}
+
                 </div>
             </div>
             <!-- .col-md-8 -->
@@ -154,59 +62,20 @@
                 </div>
 
                 <div class="sidebar-box ftco-animate">
-                    <h3>Popular Articles</h3>
+                    <h3>Current Sites</h3>
                     <div class="block-21 mb-4 d-flex">
+                        {% if currentSite %} {% for currentSite in currentSite %}
                         <a class="blog-img mr-4" style="background-image: url(images/image_1.jpg);"></a>
                         <div class="text">
-                            <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
+                            <h3 class="heading"><a href="#">{{ currentSite.current_site_name }}</a></h3>
                             <div class="meta">
-                                <div><a href="#"><span class="icon-calendar"></span> Oct. 04, 2018</a></div>
-                                <div><a href="#"><span class="icon-person"></span> Dave Lewis</a></div>
-                                <div><a href="#"><span class="icon-chat"></span> 19</a></div>
+                                <div><a href="#"><span class="icon-calendar"></span> {{ current.current_project_date }} </a></div>
                             </div>
                         </div>
+                        {% endfor %} {% else %}
+                        <h5>No Current Sites At This Movement</h5>
+                        {% endif %}
                     </div>
-                    <div class="block-21 mb-4 d-flex">
-                        <a class="blog-img mr-4" style="background-image: url(images/image_2.jpg);"></a>
-                        <div class="text">
-                            <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-                            <div class="meta">
-                                <div><a href="#"><span class="icon-calendar"></span> Oct. 04, 2018</a></div>
-                                <div><a href="#"><span class="icon-person"></span> Dave Lewis</a></div>
-                                <div><a href="#"><span class="icon-chat"></span> 19</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="block-21 mb-4 d-flex">
-                        <a class="blog-img mr-4" style="background-image: url(images/image_3.jpg);"></a>
-                        <div class="text">
-                            <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the blind texts</a></h3>
-                            <div class="meta">
-                                <div><a href="#"><span class="icon-calendar"></span> Oct. 04, 2018</a></div>
-                                <div><a href="#"><span class="icon-person"></span> Dave Lewis</a></div>
-                                <div><a href="#"><span class="icon-chat"></span> 19</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="sidebar-box ftco-animate">
-                    <h3>Tag Cloud</h3>
-                    <ul class="tagcloud">
-                        <a href="#" class="tag-cloud-link">dish</a>
-                        <a href="#" class="tag-cloud-link">menu</a>
-                        <a href="#" class="tag-cloud-link">food</a>
-                        <a href="#" class="tag-cloud-link">sweet</a>
-                        <a href="#" class="tag-cloud-link">tasty</a>
-                        <a href="#" class="tag-cloud-link">delicious</a>
-                        <a href="#" class="tag-cloud-link">desserts</a>
-                        <a href="#" class="tag-cloud-link">drinks</a>
-                    </ul>
-                </div>
-
-                <div class="sidebar-box ftco-animate">
-                    <h3>Paragraph</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus itaque, autem necessitatibus voluptate quod mollitia delectus aut, sunt placeat nam vero culpa sapiente consectetur similique, inventore eos fugit cupiditate numquam!</p>
                 </div>
             </div>
             <!-- END COL -->

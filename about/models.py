@@ -1,5 +1,5 @@
 from django.db import models
-from contact_us.models import ContactUs
+
 # Create your models here.
 class About(models.Model):
     about_you = models.CharField(max_length=200, blank=True)
