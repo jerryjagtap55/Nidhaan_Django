@@ -2,50 +2,48 @@
 
 <footer class="ftco-footer ftco-bg-dark ftco-section">
     <div class="container">
-        <div class="row mb-5 d-flex">
+        <div class="row mb-6 d-flex">
             <div class="col-md">
                 <div class="ftco-footer-widget mb-4">
                     <h2 class="ftco-heading-2">Nidhaan Design</h2>
-                    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+                    {% if contact_us %} {% for contact_us in contact_us|slice:":1" %} {% if contact_us.footer_details %}
+                    <p>{{ contact_us.footer_details }}</p>
+                    {% endif %}
                     <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
-                        <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-                        <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                        <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+                        {% if contact_us.twitter %}
+                        <li class="ftco-animate"><a href="{{ contact_us.twitter }}"><span class="icon-twitter"></span></a></li>
+                        {% endif %} {% if contact_us.facebook_link %}
+                        <li class="ftco-animate"><a href="{{ contact_us.facebook_link }}"><span class="icon-facebook"></span></a></li>
+                        {% endif %} {% if contact_us.insta_link %}
+                        <li class="ftco-animate"><a href="{{ contact_us.insta_link }}"><span class="icon-instagram"></span></a></li>
+                        {% endif %}
                     </ul>
+                    {% endfor %} {% endif %}
                 </div>
             </div>
             <div class="col-md">
                 <div class="ftco-footer-widget mb-4 ml-md-4">
                     <h2 class="ftco-heading-2">Usefull Links</h2>
                     <ul class="list-unstyled">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Work</a></li>
-                        <li><a href="#">Pricing</a></li>
-                        <li><a href="#">Blog</a></li>
+                        <li><a href="{% url 'index' %}">Home</a></li>
+                        <li><a href="{% url 'about' %}">About</a></li>
+                        <li><a href="{% url 'portfolio' %}">Portfolio</a></li>
+                        <li><a href="{% url 'blogs' %}">Blog</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="col-md">
-                <div class="ftco-footer-widget mb-4">
-                    <h2 class="ftco-heading-2">Quick Links</h2>
-                    <ul class="list-unstyled">
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Practice Areas</a></li>
-                        <li><a href="#">Appointment</a></li>
-                        <li><a href="#">Terms &amp; Conditions</a></li>
-                        <li><a href="#">FAQ</a></li>
-                    </ul>
-                </div>
-            </div>
+
             <div class="col-md">
                 <div class="ftco-footer-widget mb-4">
                     <h2 class="ftco-heading-2">Have a Questions?</h2>
                     <div class="block-23 mb-3">
-                        <ul>
-                            <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
-                            <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
-                            <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@yourdomain.com</span></a></li>
+                        <ul>{% if contact_us %} {% for contact_us in contact_us|slice:":1" %} {% if contact_us.address %}
+                            <li><span class="icon icon-map-marker"></span><span class="text">{{ contact_us.address }}</span></li>
+                            {% endif %} {% if contact_us.phone1 %}
+                            <li><a href=""><span class="icon icon-phone"></span><span class="text">{{ contact_us.phone1 }}</span></a></li>
+                            {% endif %} {% if contact_us.email %}
+                            <li><a href=""><span class="icon icon-envelope"></span><span class="text">{{ contact_us.email }}</span></a></li>
+                            {% endif %} {% endfor %} {% endif %}
                         </ul>
                     </div>
                 </div>
@@ -55,12 +53,10 @@
             <div class="col-md-12 text-center">
 
                 <p>
-                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     Copyright &copy;
                     <script>
                         document.write(new Date().getFullYear());
                     </script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="http://nishproject.space" target="_blank">Nishant Jagtap</a>
-                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                 </p>
             </div>
         </div>

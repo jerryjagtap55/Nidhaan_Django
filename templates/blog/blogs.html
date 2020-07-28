@@ -1,13 +1,13 @@
 {% extends 'base.html' %} {% block title %} | Welcome {% endblock %} {% load static %} {% block content %}
 
-<section class="hero-wrap hero-wrap-2 d-flex" style="background-image: url(images/bg_2.jpeg);">
+<section class="hero-wrap hero-wrap-2 d-flex" style="background-image: url({% static 'images/bg_2.jpeg' %});">
     <div class="overlay"></div>
     <div class="container">
         <div class="row d-flex align-items-center">
             <div class="col-md-7 col-sm-12 ftco-animate text-bread d-flex align-items-center">
                 <div class="text">
-                    <h1 class="mb-3 mt-5 bread">Blog</h1>
-                    <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Blog</span></p>
+                    <h1 class="mb-3 mt-5 bread">Project Design</h1>
+                    <p class="breadcrumbs"><span class="mr-2"><a href="{% url 'index' %}">Home</a></span> <span>Project Design</span></p>
                 </div>
             </div>
         </div>
