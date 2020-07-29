@@ -4,7 +4,7 @@ from .models import Portfolio
 # Create your views here.
 def portfolio(request):
     contact_us = ContactUs.objects.all()
-    portfolio = Portfolio.objects.all()
+    portfolio = Portfolio.objects.order_by('-project_date').filter(show=True)
 
 
     context = {

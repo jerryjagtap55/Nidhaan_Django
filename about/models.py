@@ -3,15 +3,15 @@ from django.db import models
 # Create your models here.
 class About(models.Model):
     about_you = models.CharField(max_length=200, blank=True)
+    main_pic = models.ImageField(upload_to='about/%Y/%m/%d/')
     name = models.CharField(max_length=200)
-    profile_pic = models.ImageField(upload_to='photos/%Y/%m/%d/')
+    profile_pic = models.ImageField(upload_to='about/%Y/%m/%d/')
 
 
     def __str__(self):
         return self.name
 
 class Service(models.Model):
-    about = models.ForeignKey(About, on_delete = models.DO_NOTHING, default=1)
     service_title = models.CharField(max_length=500)
     service_description = models.TextField(blank=True)
     show = models.BooleanField(default=True)
@@ -20,7 +20,6 @@ class Service(models.Model):
         return self.service_title
 
 class Detail(models.Model):
-    key = models.ForeignKey(About,on_delete=models.DO_NOTHING, default=1)
     num = models.CharField(max_length=200 ,default=1)
     box_name = models.CharField(max_length=500, blank=True)
     box = models.TextField(blank=True)

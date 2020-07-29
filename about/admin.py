@@ -9,8 +9,9 @@ class AboutAdmin(admin.ModelAdmin):
     list_per_page = 20
 
 class ServiceAdmin(admin.ModelAdmin):
-    list_display = ('id','service_title')
+    list_display = ('id','service_title', 'show')
     list_display_links = ('id','service_title')
+    list_editable = ('show',)
     list_per_page = 20
 
 class DetailAdmin(admin.ModelAdmin):

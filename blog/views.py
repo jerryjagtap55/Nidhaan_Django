@@ -4,8 +4,8 @@ from .models import Project,CurrentSite
 # Create your views here.
 def index(request):
     contact_us = ContactUs.objects.all()
-    project = Project.objects.all()
-    currentSite = CurrentSite.objects.all()
+    project = Project.objects.order_by('-project_date').filter(show=True)
+    currentSite = CurrentSite.objects.order_by('-current_project_date').filter(show=True)
 
     context = {
         'contact_us' : contact_us,

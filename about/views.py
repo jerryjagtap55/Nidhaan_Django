@@ -4,7 +4,7 @@ from contact_us.models import ContactUs
 # Create your views here.
 def about(request):
     about = About.objects.all()
-    service = Service.objects.all()
+    service = Service.objects.filter(show=True)
     detail = Detail.objects.all()
     contact_us = ContactUs.objects.all()
 
