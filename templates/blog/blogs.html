@@ -20,17 +20,19 @@
             <div class="col-lg-8 ftco-animate">
                 <div class="row">
                     {% if project %} {% for project in project %}
-                    <div class="blog-entry">
-                        <a href="blog-single.html" class="block-20" style="background-image: url({{ project.project_main_photo.url }});">
-                        </a>
-                        <div class="text py-4">
-                            <div class="meta mb-3">
-                                <div><a href="#"> {{ project.project_date }} </a></div>
-                                <div><a href="#">{{ project.categorie }}</a></div>
+                    <div class="col-md-6 ftco-animate">
+                        <div class="blog-entry">
+                            <a href="{% url 'blog' project.id %}" class="block-20" style="background-image: url({{ project.project_main_photo.url }});">
+                            </a>
+                            <div class="text py-4">
+                                <div class="meta mb-3">
+                                    <div><a href="{% url 'blog' project.id %}" style="color: gray;"> {{ project.project_date }} </a></div>
+                                    <div><a href="#">{{ project.categorie }}</a></div>
 
-                            </div>
-                            <div class="desc">
-                                <h3 class="heading"><a href="#">{{ project.name }}</a></h3>
+                                </div>
+                                <div class="desc">
+                                    <h3 class="heading"><a href="{% url 'blog' project.id %}">{{ project.name }}</a></h3>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -64,12 +66,12 @@
                 <div class="sidebar-box ftco-animate">
                     <h3>Current Sites</h3>
                     <div class="block-21 mb-4 d-flex">
-                        {% if currentSite %} {% for currentSite in currentSite %}
-                        <a class="blog-img mr-4" style="background-image: url(images/image_1.jpg);"></a>
+                        {% if currentSite %} {% for currentSite in currentSite|slice:":3" %}
+                        <a class="blog-img mr-4" style="background-image: url({{ currentSite.current_main_photo.url }});"></a>
                         <div class="text">
-                            <h3 class="heading"><a href="#">{{ currentSite.current_site_name }}</a></h3>
+                            <h3 class="heading"><a href="{% url 'cs' currentSite.id %}">{{ currentSite.current_site_name }}</a></h3>
                             <div class="meta">
-                                <div><a href="#"><span class="icon-calendar"></span> {{ current.current_project_date }} </a></div>
+                                <div><a href="{% url 'cs' currentSite.id %}"><span class="icon-calendar"></span> {{ currentSite.current_project_date }} </a></div>
                             </div>
                         </div>
                         {% endfor %} {% else %}

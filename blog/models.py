@@ -14,9 +14,7 @@ class Project(models.Model):
     design_photo2 = models.ImageField(upload_to='photos/%Y/%m/%d/')
     design_detail_1 = models.TextField(blank=True)
     design_detail_2 = models.TextField(blank=True)
-    design_detail_3 = models.TextField(blank=True)
-    design_detail_4 = models.TextField(blank=True)
-
+    
 
     final_photo_1 = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
     final_photo_2 = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
@@ -26,6 +24,9 @@ class Project(models.Model):
     final_photo_6 = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
     final_photo_7 = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
     final_photo_8 = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
+    
+    design_detail_3 = models.TextField(blank=True)
+    design_detail_4 = models.TextField(blank=True)
 
     show = models.BooleanField(default=True)
     project_date = models.DateTimeField(default=datetime.now, blank=True)

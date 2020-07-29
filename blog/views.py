@@ -1,29 +1,39 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from contact_us.models import ContactUs
 from .models import Project,CurrentSite
 # Create your views here.
 def index(request):
     contact_us = ContactUs.objects.all()
     project = Project.objects.all()
+    currentSite = CurrentSite.objects.all()
 
     context = {
         'contact_us' : contact_us,
         'project' : project,
-
+        'currentSite' : currentSite,
     }
     return render(request, 'blog/blogs.html', context)
 
-def blog(request):
+def blog(request, blog_id):
+    project = get_object_or_404(Project, pk=blog_id)
+
+
     contact_us = ContactUs.objects.all()
     context = {
         'contact_us' : contact_us,
+        'project' : project,
     }
     return render(request, 'blog/blog.html', context)
 
-def cs(request):
+def cs(request, cs_id):
+    currentSite = get_object_or_404(CurrentSite, pk=cs_id)
+
+
+
     contact_us = ContactUs.objects.all()
 
     context = {
         'contact_us' : contact_us,
+        'currentSite' : currentSite,
     }
     return render(request, 'blog/cs.html', context)

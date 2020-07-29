@@ -27,8 +27,8 @@
                     <ul class="list-unstyled">
                         <li><a href="{% url 'index' %}">Home</a></li>
                         <li><a href="{% url 'about' %}">About</a></li>
-                        <li><a href="{% url 'portfolio' %}">Portfolio</a></li>
-                        <li><a href="{% url 'blogs' %}">Blog</a></li>
+                        <li><a href="{% url 'portfolio' %}">Work</a></li>
+                        <li><a href="{% url 'blogs' %}">Project Desgin</a></li>
                     </ul>
                 </div>
             </div>
@@ -40,9 +40,9 @@
                         <ul>{% if contact_us %} {% for contact_us in contact_us|slice:":1" %} {% if contact_us.address %}
                             <li><span class="icon icon-map-marker"></span><span class="text">{{ contact_us.address }}</span></li>
                             {% endif %} {% if contact_us.phone1 %}
-                            <li><a href=""><span class="icon icon-phone"></span><span class="text">{{ contact_us.phone1 }}</span></a></li>
+                            <li><a href="{{ contact_us.whatsapp_link }}"><span class="icon icon-phone"></span><span class="text">{{ contact_us.phone1 }}</span></a></li>
                             {% endif %} {% if contact_us.email %}
-                            <li><a href=""><span class="icon icon-envelope"></span><span class="text">{{ contact_us.email }}</span></a></li>
+                            <li><a href="{{ contact_us.email_link }}"><span class="icon icon-envelope"></span><span class="text">{{ contact_us.email }}</span></a></li>
                             {% endif %} {% endfor %} {% endif %}
                         </ul>
                     </div>
