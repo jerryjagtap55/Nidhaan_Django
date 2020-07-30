@@ -29,8 +29,8 @@ def contact(request):
 
         # Send client_email
         send_mail(
-            'Portfolio Inquiry',
-            'There has been Inquiry for   ' + client_name +'.  From Email: ' + client_email + '.  Subject: ' + subject + '. ' + client_message + 'Sign into the admin panel for more',
+            'Inquiry',
+            'There has been Inquiry for   ' + client_name +'.  From Email: ' + client_email + '.  Subject: ' + subject + '. Message:' + client_message + '.  Sign into the admin panel for more',
             'nidhandesignstudio@gmail.com',
             ['nidhandesignstudio@gmail.com'],
             fail_silently=False

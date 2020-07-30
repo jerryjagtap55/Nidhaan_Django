@@ -37,3 +37,24 @@ def cs(request, cs_id):
         'currentSite' : currentSite,
     }
     return render(request, 'blog/cs.html', context)
+
+
+def search(request):
+    currentSite = CurrentSite.objects.order_by('-current_project_date').filter(show=True)
+    contact_us = ContactUs.objects.all()
+
+    queryset_list = Project.objects.order_by('-project_date').filter(show=True)
+    #keywords
+    if 'keywords' in request.GET:
+        keywords = request.GET['keywords']
+        if keywords:
+                queryset_list = queryset_list.filter(categorie__icontains=keywords)
+    
+    context = {
+        'project' : queryset_list,
+        'values': request.GET,
+        'currentSite' : currentSite,
+        'contact_us' : contact_us,
+    }
+
+    return render(request, 'blog/blogs.html', context)

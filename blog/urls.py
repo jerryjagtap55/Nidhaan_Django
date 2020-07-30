@@ -8,4 +8,6 @@ urlpatterns = [
     path('<int:blog_id>', views.blog,name='blog'),
     
     path('cs:<int:cs_id>',views.cs,name='cs'),
+
+    path('search', views.search, name='search'),
 ]

@@ -13,6 +13,9 @@ class Portfolio(models.Model):
     product_design = models.TextField(blank=True)
     product_design_photo = models.ImageField(upload_to='port/%Y/%m/%d/', blank=True)
     design_photo2 = models.ImageField(upload_to='port/%Y/%m/%d/', blank=True)
+    design_photo3 = models.ImageField(upload_to='port/%Y/%m/%d/', blank=True)
+    design_photo4 = models.ImageField(upload_to='port/%Y/%m/%d/', blank=True)
+    design_photo5 = models.ImageField(upload_to='port/%Y/%m/%d/', blank=True)
     
     design_detail_1 = models.TextField(blank=True)
     design_detail_2 = models.TextField(blank=True)
@@ -26,7 +29,11 @@ class Portfolio(models.Model):
     final_photo_6 = models.ImageField(upload_to='port/%Y/%m/%d/', blank=True)
     final_photo_7 = models.ImageField(upload_to='port/%Y/%m/%d/', blank=True)
     final_photo_8 = models.ImageField(upload_to='port/%Y/%m/%d/', blank=True)
+    final_photo_9 = models.ImageField(upload_to='port/%Y/%m/%d/', blank=True)
+    final_photo_10 = models.ImageField(upload_to='port/%Y/%m/%d/', blank=True)
     
+
+
     design_detail_3 = models.TextField(blank=True)
     design_detail_4 = models.TextField(blank=True)
 

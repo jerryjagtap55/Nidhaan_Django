@@ -14,6 +14,9 @@ class Project(models.Model):
     design_photo2 = models.ImageField(upload_to='photos/%Y/%m/%d/')
     design_detail_1 = models.TextField(blank=True)
     design_detail_2 = models.TextField(blank=True)
+    design_detail_3 = models.TextField(blank=True)
+    design_detail_4 = models.TextField(blank=True)
+    design_detail_5 = models.TextField(blank=True)
     
 
     final_photo_1 = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
@@ -24,6 +27,8 @@ class Project(models.Model):
     final_photo_6 = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
     final_photo_7 = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
     final_photo_8 = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
+    final_photo_9 = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
+    final_photo_10 = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
     
     design_detail_3 = models.TextField(blank=True)
     design_detail_4 = models.TextField(blank=True)
@@ -46,6 +51,9 @@ class CurrentSite(models.Model):
     current_design_photo_1 = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
     current_design_photo_2 = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
     current_design_photo_3 = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
+    current_design_photo_4 = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
+    current_design_photo_5 = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
+    
 
     current_thoughts = models.TextField(blank=True)
     photo_1 = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
@@ -56,6 +64,8 @@ class CurrentSite(models.Model):
     photo_6 = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
     photo_7 = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
     photo_8 = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
+    photo_9 = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
+    photo_10 = models.ImageField(upload_to='photos/%Y/%m/%d/', blank=True)
 
 
 
