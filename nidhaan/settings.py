@@ -34,7 +34,6 @@ INSTALLED_APPS = [
     'pages.apps.PagesConfig',
     'about.apps.AboutConfig',
     'blog.apps.BlogConfig',
-    'contact.apps.ContactConfig',
     'portfolio.apps.PortfolioConfig',
     'contact_us.apps.ContactUsConfig',
 
@@ -137,3 +136,11 @@ STATICFILES_DIRS = [
 #media folder settings
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+#Email
+
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'nidhandesignstudio@gmail.com'
+EMAIL_HOST_PASSWORD = 'edngcydfzskamdiw'
+EMAIL_USE_TLS = True
