@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% block title %} | Project Design {% endblock %} {% load static %} {% block content %}
+{% extends 'base.html' %} {% block title %} | {{ project.name }} {% endblock %} {% load static %} {% block content %}
 
 
 <!-- .section -->
@@ -95,7 +95,10 @@
                             <img src="{{ project.final_photo_5.url }}" alt="" class="img-fluid">
                         </a>
                     </div>
-                    {% endif %} {% if project.final_photo_6 %}
+                    {% endif %}
+                </p>
+                <div class="row mb-3 mt-5">
+                    {% if project.final_photo_6 %}
                     <div class="col-md-2">
                         <a href="{{ project.final_photo_6.url }}" data-lightbox="current-images">
                             <img src="{{ project.final_photo_6.url }}" alt="" class="img-fluid">
@@ -126,8 +129,7 @@
                         </a>
                     </div>
                     {% endif %}
-
-                </p>
+                </div>
                 <p>{{ project.design_detail_3 }}</p>
                 <p>{{ project.design_detail_4 }}</p>
 
